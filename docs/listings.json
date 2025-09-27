@@ -2,9 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/post-with-code/index.html",
       "/posts/2025-09-25-distribucion-edades/index.html",
-      "/posts/welcome/index.html"
+      "/posts/2025-09-24-post-with-code/index.html",
+      "/posts/2025-09-23-welcome/index.html"
     ]
   }
 ]

@@ -2,21 +2,14 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Sobre mi",
     "section": "",
-    "text": "¡Hola! Soy Herbert Lizama y aquí comparto mis proyectos de R y Python que publico en mi página de Instagram y YouTube."
-  },
-  {
-    "objectID": "about.html#sobre-mí",
-    "href": "about.html#sobre-mí",
-    "title": "About",
-    "section": "Sobre mí",
-    "text": "Sobre mí\nApasionado por el análisis de datos, la visualización y la ciencia de datos aplicada. En este sitio encontrarás ejemplos, tutoriales y proyectos prácticos.\nSoy actuario de profesión y me encanta enseñar y compartir conocimientos. Actualmente estoy estudiando la maestría en ciencia de datos por parte del INFOTEC. Me dedico a la ciencia de datos desde 2021 y he trabajado en proyectos de análisis de datos, modelado predictivo y visualización interactiva."
+    "text": "¡Hola! Soy Herbert Lizama y aquí comparto mis proyectos de R y Python que publico en mi página de Instagram y YouTube.\nApasionado por el análisis de datos, la visualización y la ciencia de datos aplicada. En este sitio encontrarás ejemplos, tutoriales y proyectos prácticos.\nSoy actuario de profesión y me encanta enseñar y compartir conocimientos. Actualmente estoy estudiando la maestría en ciencia de datos por parte del INFOTEC. Me dedico a la ciencia de datos desde 2021 y he trabajado en proyectos de análisis de datos, modelado predictivo y visualización interactiva."
   },
   {
     "objectID": "about.html#sígueme",
     "href": "about.html#sígueme",
-    "title": "About",
+    "title": "Sobre mi",
     "section": "Sígueme",
     "text": "Sígueme\nSi te interesa mi contenido, puedes apoyarme siguiendome en mis redes sociales:"
   },
@@ -84,24 +77,24 @@
     "text": "Conclusiones\nSi has llegado hasta aquí, ¡felicidades! Has aprendido a crear un gráfico de pirámide poblacional desde cero, mejorarlo visualmente e informativamente, y agregar detalles adicionales para hacerlo más útil.\nSé que aún quedan muchos aspectos por explorar, como la creación de gráficos múltiples en una sola figura, dimensiones de la figura, títulos más elaborados, entre otras cosas. Sin embargo, los conceptos y técnicas que has aprendido aquí te proporcionan una base sólida para seguir experimentando y mejorando tus habilidades en visualización de datos con Python."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
+    "objectID": "posts/2025-09-23-welcome/index.html",
+    "href": "posts/2025-09-23-welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/2025-09-24-post-with-code/index.html",
+    "href": "posts/2025-09-24-post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "blog-personal",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nSep 26, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nGráfico distribución de edades - Pirámide poblacional\n\n\n\n\n\n\npython\n\n\n\n\n\n\n\n\n\nSep 26, 2025\n\n\nHerbert Lizama\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 23, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Gráfico distribución de edades - Pirámide poblacional\n\n\n\n\n\n\npython\n\n\n\n\n\n\n\n\n\nSep 25, 2025\n\n\nHerbert Lizama\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nSep 24, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 23, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   }
 ]

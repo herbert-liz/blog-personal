@@ -8,15 +8,16 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/herbert-liz
+      - icon: linkedin
+        href: https://www.linkedin.com/in/herbert-lizama/
+      - icon: instagram
+        href: https://www.instagram.com/data.impact/
+      - icon: youtube
+        href: https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ
 format:
   html:
     theme:
       - cosmo
       - brand
     css: styles.css
-
-
-
