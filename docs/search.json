@@ -4,7 +4,21 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this blog"
+    "text": "¡Hola! Soy Herbert Lizama y aquí comparto mis proyectos de R y Python que publico en mi página de Instagram y YouTube."
+  },
+  {
+    "objectID": "about.html#sobre-mí",
+    "href": "about.html#sobre-mí",
+    "title": "About",
+    "section": "Sobre mí",
+    "text": "Sobre mí\nApasionado por el análisis de datos, la visualización y la ciencia de datos aplicada. En este sitio encontrarás ejemplos, tutoriales y proyectos prácticos.\nSoy actuario de profesión y me encanta enseñar y compartir conocimientos. Actualmente estoy estudiando la maestría en ciencia de datos por parte del INFOTEC. Me dedico a la ciencia de datos desde 2021 y he trabajado en proyectos de análisis de datos, modelado predictivo y visualización interactiva."
+  },
+  {
+    "objectID": "about.html#sígueme",
+    "href": "about.html#sígueme",
+    "title": "About",
+    "section": "Sígueme",
+    "text": "Sígueme\nSi te interesa mi contenido, puedes apoyarme siguiendome en mis redes sociales:"
   },
   {
     "objectID": "posts/2025-09-25-distribucion-edades/index.html",
