@@ -3,10 +3,15 @@ project:
   output-dir: docs
 
 website:
-  title: "blog-personal"
+  title: "Herbert Lizama"
   navbar:
     right:
-      - about.qmd
+      - href: index.qmd
+        text: "Inicio"
+      - href: posts/index.qmd
+        text: "Blog"
+      - href: about.qmd
+        text: "Sobre mí"
       - icon: github
         href: https://github.com/herbert-liz
       - icon: linkedin

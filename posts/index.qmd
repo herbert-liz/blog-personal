@@ -1,0 +1,12 @@
+---
+title: "Blog"
+listing:
+  contents: .
+  type: default
+  sort: "date desc"
+  categories: true
+---
+
+# Bienvenido a mi Blog
+
+Aquí encontrarás mis publicaciones sobre visualización, análisis de datos y ciencia de datos. ¡Explora y aprende conmigo!
