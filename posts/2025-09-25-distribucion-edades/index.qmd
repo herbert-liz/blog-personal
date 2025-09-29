@@ -64,7 +64,7 @@ plt.gca().invert_yaxis() # Utilizar únicamente si su pirámide está invertida
 plt.show()
 ```
 
-Anteriormente convertimos el valor de hombres a negativo para que las baras horizontales se dibujen hacia la izquierda y derecha dependiendo del sexo.
+Anteriormente convertimos el valor de hombres a negativo para que las barras horizontales se dibujen hacia la izquierda y derecha dependiendo del sexo.
 
 Cómo se observa, el gráfico es funcional, pero puede mejorarse visualmente en varios aspectos, como los ejes, el título y la leyenda.
 

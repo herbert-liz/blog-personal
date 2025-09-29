@@ -7,7 +7,7 @@ title-block-banner: true
 # Hola, soy Herbert Lizama
 ![](profile.jpg){width=180px style="float: right; margin-left: 15px; margin-bottom: 15px; border-radius: 50%;"}
 
-En este blog comparto mis experiencias y conocimientos en análisis de datos, visualización y ciencia de datos. Principalmente comparto contenido sobre:
+En este blog comparto mis experiencias y conocimientos en análisis de datos, visualización y ciencia de datos. Aquí aprenderás:
 
 - Cómo crear gráficos impresionantes e informativos (podrás encontrarlos en mis publicaciones de [Instagram](https://www.instagram.com/data.impact/)).  
 - Tutoriales y ejercicios prácticos de análisis y ciencia de datos (de mi canal de [YouTube](https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ)).  
