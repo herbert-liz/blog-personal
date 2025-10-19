@@ -4,7 +4,7 @@
     "href": "about.html",
     "title": "Sobre mi",
     "section": "",
-    "text": "¡Hola! Soy Herbert Lizama y aquí comparto mis proyectos de R y Python que publico en mi página de Instagram y YouTube.\nSoy actuario de profesión y me encanta enseñar y compartir conocimientos. Actualmente estoy estudiando la maestría en ciencia de datos por parte del INFOTEC. Me dedico a la ciencia de datos desde 2021 y he trabajado en proyectos de análisis de datos, modelado predictivo y visualización interactiva."
+    "text": "¡Hola! Soy Herbert Lizama\nSoy actuario de profesión y me encanta enseñar. Actualmente estoy estudiando la maestría en ciencia de datos por parte del INFOTEC. Me dedico a la ciencia de datos desde 2021 y he trabajado en proyectos de análisis de datos, modelado de machine learning (especializado en credit scoring) y visualización."
   },
   {
     "objectID": "about.html#sígueme",
@@ -137,6 +137,6 @@
     "href": "index.html",
     "title": "Bienvenido",
     "section": "",
-    "text": "Hola, soy Herbert Lizama\n\nEn este blog comparto mis experiencias y conocimientos en análisis de datos, visualización y ciencia de datos. Aquí aprenderás:\n\nCómo crear gráficos impresionantes e informativos (podrás encontrarlos en mis publicaciones de Instagram).\n\nTutoriales y ejercicios prácticos de análisis y ciencia de datos (de mi canal de YouTube).\n\nSi estás interesado en aprender más sobre python o R, no dudes en explorar mis publicaciones y seguirme en mis redes.\n¡Mucho gusto!"
+    "text": "En este blog comparto mis proyectos de análisis y ciencia de datos, donde encontrarás\n\nCómo crear gráficos en python y R (podrás encontrar algunos ejemplos en mi Instagram).\nEl código visto en mis videos de YouTube (canal de YouTube).\nTutoriales sobre análisis de datos y machine learning.\n\nSi estás interesado en aprender más sobre python o R, no dudes en explorar mis publicaciones y seguirme en mis redes.\n¡Mucho gusto!"
   }
 ]

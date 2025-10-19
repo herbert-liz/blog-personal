@@ -19,9 +19,9 @@ about:
 
 ---
 
-¡Hola! Soy Herbert Lizama y aquí comparto mis proyectos de **R** y **Python** que publico en mi página de [Instagram](https://www.instagram.com/data.impact/) y [YouTube](https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ).
+¡Hola! Soy Herbert Lizama 
 
-Soy actuario de profesión y me encanta enseñar y compartir conocimientos. Actualmente estoy estudiando la maestría en ciencia de datos por parte del INFOTEC. Me dedico a la ciencia de datos desde 2021 y he trabajado en proyectos de análisis de datos, modelado predictivo y visualización interactiva.
+Soy actuario de profesión y me encanta enseñar. Actualmente estoy estudiando la maestría en ciencia de datos por parte del INFOTEC. Me dedico a la ciencia de datos desde 2021 y he trabajado en proyectos de análisis de datos, modelado de machine learning (especializado en credit scoring) y visualización.
 
 ## Sígueme
 Si te interesa mi contenido, puedes apoyarme siguiendome en mis redes sociales:
