@@ -77,32 +77,18 @@
     "text": "Conclusiones\nSi has llegado hasta aquí, ¡felicidades! Has aprendido a crear un gráfico de pirámide poblacional desde cero, mejorarlo visualmente e informativamente, y agregar detalles adicionales para hacerlo más útil.\nSé que aún quedan muchos aspectos por explorar, como la creación de gráficos múltiples en una sola figura, dimensiones de la figura, títulos más elaborados, entre otras cosas. Sin embargo, los conceptos y técnicas que has aprendido aquí te proporcionan una base sólida para seguir experimentando y mejorando tus habilidades en visualización de datos con Python."
   },
   {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Bienvenido a mi Blog\nAquí encontrarás mis publicaciones sobre visualización, análisis de datos y ciencia de datos. ¡Explora y aprende conmigo!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegresión lineal en R - Procedimiento paso a paso\n\n\n\n\n\n\nR\n\n\nYouTube\n\n\n\n\n\n\n\n\n\nSep 25, 2025\n\n\nHerbert Lizama\n\n\n\n\n\n\n\n\n\n\n\n\nGráfico distribución de edades - Pirámide poblacional\n\n\n\n\n\n\npython\n\n\n\n\n\n\n\n\n\nSep 25, 2025\n\n\nHerbert Lizama\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nSep 24, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/2025-09-24-post-with-code/index.html",
     "href": "posts/2025-09-24-post-with-code/index.html",
     "title": "Post With Code",
     "section": "",
     "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "posts/2025-09-23-welcome/index.html",
-    "href": "posts/2025-09-23-welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "posts/index.html",
-    "href": "posts/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Bienvenido a mi Blog\nAquí encontrarás mis publicaciones sobre visualización, análisis de datos y ciencia de datos. ¡Explora y aprende conmigo!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGráfico distribución de edades - Pirámide poblacional\n\n\n\n\n\n\npython\n\n\n\n\n\n\n\n\n\nSep 25, 2025\n\n\nHerbert Lizama\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nSep 24, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 23, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bienvenido",
-    "section": "",
-    "text": "Hola, soy Herbert Lizama\n\nEn este blog comparto mis experiencias y conocimientos en análisis de datos, visualización y ciencia de datos. Aquí aprenderás:\n\nCómo crear gráficos impresionantes e informativos (podrás encontrarlos en mis publicaciones de Instagram).\n\nTutoriales y ejercicios prácticos de análisis y ciencia de datos (de mi canal de YouTube).\n\nSi estás interesado en aprender más sobre python o R, no dudes en explorar mis publicaciones y seguirme en mis redes.\n¡Mucho gusto!"
   },
   {
     "objectID": "posts/2025-10-19-regresion-en-R/index.html",
@@ -145,5 +131,12 @@
     "title": "Regresión lineal en R - Procedimiento paso a paso",
     "section": "La función summary()",
     "text": "La función summary()\nFinalmente, podemos usar la función summary() para obtener un resumen detallado del modelo de regresión lineal múltiple:\n\n# Detalle regresion multiple\nsummary(regresion_multiple)\n\n\nCall:\nlm(formula = mpg ~ 0 + cyl + disp + hp + drat + wt + qsec + vs + \n    am + gear + carb, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.7721 -1.6249  0.1699  1.1068  4.4666 \n\nCoefficients:\n     Estimate Std. Error t value Pr(&gt;|t|)  \ncyl   0.35083    0.76292   0.460   0.6501  \ndisp  0.01354    0.01762   0.768   0.4504  \nhp   -0.02055    0.02144  -0.958   0.3483  \ndrat  1.24158    1.46277   0.849   0.4051  \nwt   -3.82613    1.86238  -2.054   0.0520 .\nqsec  1.19140    0.45942   2.593   0.0166 *\nvs    0.18972    2.06825   0.092   0.9277  \nam    2.83222    1.97513   1.434   0.1656  \ngear  1.05426    1.34669   0.783   0.4421  \ncarb -0.26321    0.81236  -0.324   0.7490  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.616 on 22 degrees of freedom\nMultiple R-squared:  0.9893,    Adjusted R-squared:  0.9844 \nF-statistic:   203 on 10 and 22 DF,  p-value: &lt; 2.2e-16\n\n\nLa salida de summary() incluye información importante como los coeficientes de las variables, el valor de R-cuadrado (que indica qué tan bien el modelo explica la variabilidad de los datos), y los valores p asociados a cada coeficiente (que nos ayudan a determinar la significancia estadística de cada variable en el modelo).\nPara una explicación detallada de cada uno de estos elementos, te invito a ver el video en YouTube donde se discuten estos aspectos en profundidad.\n¡Eso es todo! ¡Saludos y hasta la próxima!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bienvenido",
+    "section": "",
+    "text": "Hola, soy Herbert Lizama\n\nEn este blog comparto mis experiencias y conocimientos en análisis de datos, visualización y ciencia de datos. Aquí aprenderás:\n\nCómo crear gráficos impresionantes e informativos (podrás encontrarlos en mis publicaciones de Instagram).\n\nTutoriales y ejercicios prácticos de análisis y ciencia de datos (de mi canal de YouTube).\n\nSi estás interesado en aprender más sobre python o R, no dudes en explorar mis publicaciones y seguirme en mis redes.\n¡Mucho gusto!"
   }
 ]
