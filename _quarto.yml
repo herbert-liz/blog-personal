@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Herbert Lizama"
+  google-analytics: 'G-9BX76K2D2J'
   navbar:
     right:
       - href: index.qmd
