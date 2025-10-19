@@ -4,7 +4,7 @@ author: "Herbert Lizama"
 date: "2025-09-25"
 categories: [R,YouTube]
 ---
-Este es un post de apoyo para el video de YouTube donde se explica cómo realizar una regresión lineal en R paso a paso. Puedes ver el video aquí: [Regresión lineal en R - YouTube](https://www.youtube.com/watch?v=example).
+Este es un post de apoyo para el video de YouTube donde se explica cómo realizar una regresión lineal en R paso a paso. Puedes ver el video aquí: [Regresión lineal en R - YouTube](https://youtu.be/SjwkIIq5KfM).
 
 ## Cargar datos
 Usaremos el conjunto de datos “mtcars”, el cual viene por defecto en tu instalación de R. Lo puedes cargar a tu sesión con la siguiente instrucción:
