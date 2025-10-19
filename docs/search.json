@@ -102,6 +102,48 @@
     "href": "index.html",
     "title": "Bienvenido",
     "section": "",
-    "text": "Hola, soy Herbert Lizama\n\nEn este blog comparto mis experiencias y conocimientos en análisis de datos, visualización y ciencia de datos. Principalmente comparto contenido sobre:\n\nCómo crear gráficos impresionantes e informativos (podrás encontrarlos en mis publicaciones de Instagram).\n\nTutoriales y ejercicios prácticos de análisis y ciencia de datos (de mi canal de YouTube).\n\nSi estás interesado en aprender más sobre python o R, no dudes en explorar mis publicaciones y seguirme en mis redes.\n¡Mucho gusto!"
+    "text": "Hola, soy Herbert Lizama\n\nEn este blog comparto mis experiencias y conocimientos en análisis de datos, visualización y ciencia de datos. Aquí aprenderás:\n\nCómo crear gráficos impresionantes e informativos (podrás encontrarlos en mis publicaciones de Instagram).\n\nTutoriales y ejercicios prácticos de análisis y ciencia de datos (de mi canal de YouTube).\n\nSi estás interesado en aprender más sobre python o R, no dudes en explorar mis publicaciones y seguirme en mis redes.\n¡Mucho gusto!"
+  },
+  {
+    "objectID": "posts/2025-10-19-regresion-en-R/index.html",
+    "href": "posts/2025-10-19-regresion-en-R/index.html",
+    "title": "Regresión lineal en R - Procedimiento paso a paso",
+    "section": "",
+    "text": "Este es un post de apoyo para el video de YouTube donde se explica cómo realizar una regresión lineal en R paso a paso. Puedes ver el video aquí: Regresión lineal en R - YouTube."
+  },
+  {
+    "objectID": "posts/2025-10-19-regresion-en-R/index.html#cargar-datos",
+    "href": "posts/2025-10-19-regresion-en-R/index.html#cargar-datos",
+    "title": "Regresión lineal en R - Procedimiento paso a paso",
+    "section": "Cargar datos",
+    "text": "Cargar datos\nUsaremos el conjunto de datos “mtcars”, el cual viene por defecto en tu instalación de R. Lo puedes cargar a tu sesión con la siguiente instrucción:\n\n# Cargamos datos\ndata(mtcars)\n\nEste dataset incluye información sobre diferentes modelos de automóviles, incluyendo variables como el consumo de combustible medido en millas por galón (mpg), el número de cilindros (cyl), el peso del vehículo (wt), entre otras.\nNuestra tarea será entrenar un modelo de regresión lineal para predecir el consumo de combustible (mpg) en función del resto de las variables en el dataset."
+  },
+  {
+    "objectID": "posts/2025-10-19-regresion-en-R/index.html#analizar-relaciones-con-plot",
+    "href": "posts/2025-10-19-regresion-en-R/index.html#analizar-relaciones-con-plot",
+    "title": "Regresión lineal en R - Procedimiento paso a paso",
+    "section": "Analizar relaciones con plot()",
+    "text": "Analizar relaciones con plot()\nAntes de entrenar el modelo, es importante analizar las relaciones entre las variables. Podemos usar la función plot() para visualizar estas relaciones:\n\n# Gráfico de dispersión\nplot(mtcars$hp,mtcars$mpg)\n\n\n\n\n\n\n\n\nEn este gráfico de dispersión, podemos observar la relación entre la potencia del motor (hp) y el consumo de combustible (mpg). A simple vista, parece que hay una relación negativa entre estas dos variables: a mayor potencia, menor consumo de combustible."
+  },
+  {
+    "objectID": "posts/2025-10-19-regresion-en-R/index.html#regresión-simple",
+    "href": "posts/2025-10-19-regresion-en-R/index.html#regresión-simple",
+    "title": "Regresión lineal en R - Procedimiento paso a paso",
+    "section": "Regresión simple",
+    "text": "Regresión simple\nPodemos tomar esta variable (hp) para entrenar un modelo de regresión lineal simple, dado la relación observada. Usamos la función lm() para esto:\n\n# Regresión lineal simple\nregresion_simple &lt;- lm(mpg ~ hp, data = mtcars)\n# summary(regresion_simple)\n\nAquí, mpg ~ hp indica que estamos modelando mpg como una función de hp. La función lm() ajusta el modelo de regresión lineal a los datos proporcionados en el segundo argumento. Entraremos al detalle de la función summary() más adelante.\nPara saber si nuestro modelo tuvo un buen ajuste, usamos la función predict() para obtener las predicciones del modelo y graficarlas junto con los datos originales:\n\n# Guardamos valores estimados\nestimaciones &lt;- predict(regresion_simple)\n\n# Grafica reales vs estimados\nplot(mtcars$mpg, estimaciones)\nabline(a = 0, b = 1) # Linea de identidad\n\n\n\n\n\n\n\n\nNuestro objetivo es que los puntos están lo más cerca posible a la línea de identidad, ya que esta representa el espacio donde los valores reales y valores predichos son iguales.\n¡Muy bien! Tenemos un buen ajuste, sin embargo, aún tenemos algunos puntos alejados de nuestra linea de identidad, lo cuál solucionaremos a continuación."
+  },
+  {
+    "objectID": "posts/2025-10-19-regresion-en-R/index.html#regresión-múltiple",
+    "href": "posts/2025-10-19-regresion-en-R/index.html#regresión-múltiple",
+    "title": "Regresión lineal en R - Procedimiento paso a paso",
+    "section": "Regresión múltiple",
+    "text": "Regresión múltiple\nPodemos mejorar nuestro modelo incluyendo las variables que aún no hemos considerado. Esto, lo hacemos sumando más variables en la fórmula del modelo:\n\n# Regresión lineal múltiple\nregresion_multiple &lt;- lm(mpg~0+cyl+disp+hp+drat+wt+qsec+vs+am+gear+carb,\n                         mtcars)\n\nAquí, hemos incluido todas las variables disponibles en el dataset mtcars para predecir mpg. El 0+ al inicio de la fórmula indica que no queremos incluir el intercepto en el modelo.\nNuevamente, usamos la función predict() para obtener las predicciones del modelo y graficarlas junto con los datos originales:\n\n# Guardamos valores estimados\nestimaciones &lt;- predict(regresion_multiple)\n\n# Grafica reales vs estimados\nplot(mtcars$mpg, estimaciones)\nabline(a = 0, b = 1) # Linea de identidad\n\n\n\n\n\n\n\n\n¡Muy bien!, ahora los puntos están mucho más cerca de la línea de identidad, lo que indica que nuestro modelo tiene un mejor ajuste."
+  },
+  {
+    "objectID": "posts/2025-10-19-regresion-en-R/index.html#la-función-summary",
+    "href": "posts/2025-10-19-regresion-en-R/index.html#la-función-summary",
+    "title": "Regresión lineal en R - Procedimiento paso a paso",
+    "section": "La función summary()",
+    "text": "La función summary()\nFinalmente, podemos usar la función summary() para obtener un resumen detallado del modelo de regresión lineal múltiple:\n\n# Detalle regresion multiple\nsummary(regresion_multiple)\n\n\nCall:\nlm(formula = mpg ~ 0 + cyl + disp + hp + drat + wt + qsec + vs + \n    am + gear + carb, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.7721 -1.6249  0.1699  1.1068  4.4666 \n\nCoefficients:\n     Estimate Std. Error t value Pr(&gt;|t|)  \ncyl   0.35083    0.76292   0.460   0.6501  \ndisp  0.01354    0.01762   0.768   0.4504  \nhp   -0.02055    0.02144  -0.958   0.3483  \ndrat  1.24158    1.46277   0.849   0.4051  \nwt   -3.82613    1.86238  -2.054   0.0520 .\nqsec  1.19140    0.45942   2.593   0.0166 *\nvs    0.18972    2.06825   0.092   0.9277  \nam    2.83222    1.97513   1.434   0.1656  \ngear  1.05426    1.34669   0.783   0.4421  \ncarb -0.26321    0.81236  -0.324   0.7490  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.616 on 22 degrees of freedom\nMultiple R-squared:  0.9893,    Adjusted R-squared:  0.9844 \nF-statistic:   203 on 10 and 22 DF,  p-value: &lt; 2.2e-16\n\n\nLa salida de summary() incluye información importante como los coeficientes de las variables, el valor de R-cuadrado (que indica qué tan bien el modelo explica la variabilidad de los datos), y los valores p asociados a cada coeficiente (que nos ayudan a determinar la significancia estadística de cada variable en el modelo).\nPara una explicación detallada de cada uno de estos elementos, te invito a ver el video en YouTube donde se discuten estos aspectos en profundidad.\n¡Eso es todo! ¡Saludos y hasta la próxima!"
   }
 ]

@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Herbert Lizama">
+<meta name="dcterms.date" content="2025-09-25">
 
-<title>Bienvenido – Herbert Lizama</title>
+<title>Regresión lineal en R - Procedimiento paso a paso – Herbert Lizama</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -78,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Herbert Lizama</span>
     </a>
   </div>
@@ -89,15 +125,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/index.html"> 
+    <a class="nav-link" href="../../posts/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">Sobre mí</span></a>
   </li>  
   <li class="nav-item compact">
@@ -131,14 +167,30 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Bienvenido</h1>
-                      </div>
+      <h1 class="title">Regresión lineal en R - Procedimiento paso a paso</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">YouTube</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Herbert Lizama </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 25, 2025</p>
+      </div>
+    </div>
     
       
     </div>
@@ -155,17 +207,127 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="hola-soy-herbert-lizama" class="level1">
-<h1>Hola, soy Herbert Lizama</h1>
-<p><img src="profile.jpg" class="img-fluid" style="float: right; margin-left: 15px; margin-bottom: 15px; border-radius: 50%;" width="180"></p>
-<p>En este blog comparto mis experiencias y conocimientos en análisis de datos, visualización y ciencia de datos. Aquí aprenderás:</p>
-<ul>
-<li>Cómo crear gráficos impresionantes e informativos (podrás encontrarlos en mis publicaciones de <a href="https://www.instagram.com/data.impact/">Instagram</a>).<br>
-</li>
-<li>Tutoriales y ejercicios prácticos de análisis y ciencia de datos (de mi canal de <a href="https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ">YouTube</a>).</li>
-</ul>
-<p>Si estás interesado en aprender más sobre python o R, no dudes en explorar mis publicaciones y seguirme en mis redes.</p>
-<p>¡Mucho gusto!</p>
+<p>Este es un post de apoyo para el video de YouTube donde se explica cómo realizar una regresión lineal en R paso a paso. Puedes ver el video aquí: <a href="https://www.youtube.com/watch?v=example">Regresión lineal en R - YouTube</a>.</p>
+<section id="cargar-datos" class="level2">
+<h2 class="anchored" data-anchor-id="cargar-datos">Cargar datos</h2>
+<p>Usaremos el conjunto de datos “mtcars”, el cual viene por defecto en tu instalación de R. Lo puedes cargar a tu sesión con la siguiente instrucción:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargamos datos</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Este dataset incluye información sobre diferentes modelos de automóviles, incluyendo variables como el consumo de combustible medido en millas por galón (mpg), el número de cilindros (cyl), el peso del vehículo (wt), entre otras.</p>
+<p>Nuestra tarea será entrenar un modelo de regresión lineal para predecir el consumo de combustible (mpg) en función del resto de las variables en el dataset.</p>
+</section>
+<section id="analizar-relaciones-con-plot" class="level2">
+<h2 class="anchored" data-anchor-id="analizar-relaciones-con-plot">Analizar relaciones con plot()</h2>
+<p>Antes de entrenar el modelo, es importante analizar las relaciones entre las variables. Podemos usar la función <code>plot()</code> para visualizar estas relaciones:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de dispersión</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>hp,mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En este gráfico de dispersión, podemos observar la relación entre la potencia del motor (hp) y el consumo de combustible (mpg). A simple vista, parece que hay una relación negativa entre estas dos variables: a mayor potencia, menor consumo de combustible.</p>
+</section>
+<section id="regresión-simple" class="level2">
+<h2 class="anchored" data-anchor-id="regresión-simple">Regresión simple</h2>
+<p>Podemos tomar esta variable (hp) para entrenar un modelo de regresión lineal simple, dado la relación observada. Usamos la función <code>lm()</code> para esto:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regresión lineal simple</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>regresion_simple <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(regresion_simple)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Aquí, <code>mpg ~ hp</code> indica que estamos modelando <code>mpg</code> como una función de <code>hp</code>. La función <code>lm()</code> ajusta el modelo de regresión lineal a los datos proporcionados en el segundo argumento. Entraremos al detalle de la función summary() más adelante.</p>
+<p>Para saber si nuestro modelo tuvo un buen ajuste, usamos la función predict() para obtener las predicciones del modelo y graficarlas junto con los datos originales:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Guardamos valores estimados</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>estimaciones <span class="ot">&lt;-</span> <span class="fu">predict</span>(regresion_simple)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafica reales vs estimados</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg, estimaciones)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>) <span class="co"># Linea de identidad</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Nuestro objetivo es que los puntos están lo más cerca posible a la línea de identidad, ya que esta representa el espacio donde los valores reales y valores predichos son iguales.</p>
+<p>¡Muy bien! Tenemos un buen ajuste, sin embargo, aún tenemos algunos puntos alejados de nuestra linea de identidad, lo cuál solucionaremos a continuación.</p>
+</section>
+<section id="regresión-múltiple" class="level2">
+<h2 class="anchored" data-anchor-id="regresión-múltiple">Regresión múltiple</h2>
+<p>Podemos mejorar nuestro modelo incluyendo las variables que aún no hemos considerado. Esto, lo hacemos sumando más variables en la fórmula del modelo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regresión lineal múltiple</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>regresion_multiple <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg<span class="sc">~</span><span class="dv">0</span><span class="sc">+</span>cyl<span class="sc">+</span>disp<span class="sc">+</span>hp<span class="sc">+</span>drat<span class="sc">+</span>wt<span class="sc">+</span>qsec<span class="sc">+</span>vs<span class="sc">+</span>am<span class="sc">+</span>gear<span class="sc">+</span>carb,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                         mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Aquí, hemos incluido todas las variables disponibles en el dataset <code>mtcars</code> para predecir <code>mpg</code>. El <code>0+</code> al inicio de la fórmula indica que no queremos incluir el intercepto en el modelo.</p>
+<p>Nuevamente, usamos la función <code>predict()</code> para obtener las predicciones del modelo y graficarlas junto con los datos originales:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Guardamos valores estimados</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>estimaciones <span class="ot">&lt;-</span> <span class="fu">predict</span>(regresion_multiple)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafica reales vs estimados</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg, estimaciones)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>) <span class="co"># Linea de identidad</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>¡Muy bien!, ahora los puntos están mucho más cerca de la línea de identidad, lo que indica que nuestro modelo tiene un mejor ajuste.</p>
+</section>
+<section id="la-función-summary" class="level2">
+<h2 class="anchored" data-anchor-id="la-función-summary">La función summary()</h2>
+<p>Finalmente, podemos usar la función <code>summary()</code> para obtener un resumen detallado del modelo de regresión lineal múltiple:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detalle regresion multiple</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(regresion_multiple)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ 0 + cyl + disp + hp + drat + wt + qsec + vs + 
+    am + gear + carb, data = mtcars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.7721 -1.6249  0.1699  1.1068  4.4666 
+
+Coefficients:
+     Estimate Std. Error t value Pr(&gt;|t|)  
+cyl   0.35083    0.76292   0.460   0.6501  
+disp  0.01354    0.01762   0.768   0.4504  
+hp   -0.02055    0.02144  -0.958   0.3483  
+drat  1.24158    1.46277   0.849   0.4051  
+wt   -3.82613    1.86238  -2.054   0.0520 .
+qsec  1.19140    0.45942   2.593   0.0166 *
+vs    0.18972    2.06825   0.092   0.9277  
+am    2.83222    1.97513   1.434   0.1656  
+gear  1.05426    1.34669   0.783   0.4421  
+carb -0.26321    0.81236  -0.324   0.7490  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.616 on 22 degrees of freedom
+Multiple R-squared:  0.9893,    Adjusted R-squared:  0.9844 
+F-statistic:   203 on 10 and 22 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>La salida de <code>summary()</code> incluye información importante como los coeficientes de las variables, el valor de R-cuadrado (que indica qué tan bien el modelo explica la variabilidad de los datos), y los valores p asociados a cada coeficiente (que nos ayudan a determinar la significancia estadística de cada variable en el modelo).</p>
+<p>Para una explicación detallada de cada uno de estos elementos, te invito a ver el video en YouTube donde se discuten estos aspectos en profundidad.</p>
+<p>¡Eso es todo! ¡Saludos y hasta la próxima!</p>
 
 
 </section>
