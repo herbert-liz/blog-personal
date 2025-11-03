@@ -1,0 +1,207 @@
+---
+title: "Python para análisis de datos - Introducción"
+author: "Herbert Lizama"
+date: "2025-09-25"
+categories: [Python,YouTube]
+---
+
+# Introducción a Python para el análisis de datos
+En este post aprenderás los fundamentos de Python aplicados al análisis de datos. Puedes complementar la lectura con el video de YouTube disponible [aquí](https://www.youtube.com/watch?v=example).
+
+## Instalar y cargar librerías
+Usaremos dos liberías super importantes en el anáslisis de datos con Python: `NumPy` y `Pandas`. Para instalar estas librerías, puedes usar el siguiente comando en tu terminal o consola de Python:
+
+```{python}
+#| eval: false
+# Para macOS
+pip3 install numpy pandas
+
+# Para Windows
+pip install numpy pandas
+```
+
+Igual puedes ejecutar estos comandos desde tu notebook de Jupyter anteponiendo un signo de exclamación:
+```{python}
+#| eval: false
+# macOS
+!pip3 install numpy pandas
+
+# Windows
+!pip install numpy pandas
+```
+
+Para cargar las librerías en tu script o notebook, utiliza:
+```{python}
+import numpy as np
+import pandas as pd
+```
+
+## Como crear variables y tipos de datos
+En Python, puedes crear variables simplemente asignándoles un valor. Aquí tienes algunos ejemplos de diferentes tipos de datos:
+```{python}
+nombre = "Herbert Lizama"   # Cadena de texto
+edad = 30                   # Entero
+altura = 1.7                # Flotante
+es_estudiante = False       # Booleano
+```
+
+Puedes verificar el tipo de dato de una variable usando la función `type()` o consultando la lista de variables en tu entorno de desarrollo (consultar video para más detalles):
+```{python}
+print(type(nombre))        # <class 'str'>
+print(type(edad))          # <class 'int'>
+print(type(altura))        # <class 'float'>
+print(type(es_estudiante)) # <class 'bool'>
+```
+
+## Listas en Python
+Las listas son colecciones ordenadas y mutables que pueden contener elementos de diferentes tipos de datos. Aquí tienes un ejemplo de cómo crear una lista con los valores definidos anteriormente:
+```{python}
+# Crear una lista con diferentes tipos de datos
+lista = [nombre, edad, altura, es_estudiante]
+print(lista)
+```
+
+Algunas operaciones comunes con listas incluyen:
+```{python}
+# Acceder a elementos
+print(lista[0])  # primer elemento
+print(lista[1])  # segundo elemento
+print(lista[-1])  # ultimo elemento
+
+# Modificar elementos
+lista[2] = 1.75
+print(lista)
+
+# Agregar elementos
+lista.append("nuevo elemento")
+print(lista)
+
+# Eliminar elementos
+lista.remove(30)
+print(lista)
+```
+
+Las listas con elementos numéricos pueden ser útiles para realizar cálculos y análisis de datos básicos. Por ejemplo:
+```{python}
+listaEdades = [25, 30, 22, 28, 35]
+promedioEdad = sum(listaEdades) / len(listaEdades)
+print("Promedio de edad:", promedioEdad)
+```
+
+Ahora, imagina que quieres multiplicar cada edad por 2, intuitivamente podrías hacer algo como esto:
+```{python}
+listaEdades * 2
+```
+
+Pero esto no funcionará como esperas, ya que en Python, multiplicar una lista por un número simplemente repite la lista. Para realizar operaciones matemáticas elementales en listas, es mejor usar librerías como `NumPy`, que veremos a continuación.
+
+## Numpy
+`NumPy` es una librería fundamental para el cálculo numérico en Python. Proporciona soporte para arreglos multidimensionales y funciones matemáticas avanzadas. Aquí tienes un ejemplo básico de cómo usar `NumPy` para crear un arreglo y realizar operaciones matemáticas:
+```{python}
+import numpy as np
+
+# Crear un arreglo de NumPy
+arreglo = np.array([25, 30, 22, 28, 35])
+
+# Calcular el promedio
+promedio = np.mean(arreglo)
+print("Promedio de edad:", promedio)
+
+# Multiplicar cada elemento por 2
+arregloMultiplicado = arreglo * 2
+print("Arreglo multiplicado por 2:", arregloMultiplicado)
+```
+
+Igualmente podemos verificar los elementos que cumplen cierta condición, por ejemplo, edades mayores a 30:
+```{python}
+edadesMayores30 = arreglo[arreglo > 30]
+print("Edades mayores a 30:", edadesMayores30)
+```
+
+## Pandas
+`Pandas` es una librería poderosa para la manipulación y análisis de datos. Proporciona estructuras de datos como `DataFrame` y `Series`, que facilitan el manejo de datos tabulares. Aquí tienes un ejemplo básico de cómo usar `Pandas` para crear un `DataFrame` y realizar operaciones de análisis de datos:
+```{python}
+datos = pd.DataFrame({
+    'Nombre': ['Ana', 'Luis', 'Carlos', 'Marta'],
+    'Edad': [28, 34, 29, 42],
+    'Estatura': [1.65, 1.80, 1.75, 1.60],
+    'Estudiante': [True, False, True, False]
+})
+datos
+```
+
+Podemos observar estadísticas descriptivas básicas para las variables numéricas del `DataFrame` usando el método `describe()`:
+```{python}
+datos.describe()
+```
+
+O ver el tipo de variable y si tiene valores nulos con `info()`:
+```{python}
+datos.info()
+```
+
+Si no nos interesan todas las columnas, podemos seleccionar solo las que queremos analizar:
+```{python}
+datos[['Nombre', 'Edad']]
+```
+
+Similar a como lo hicimos con los arreglos de `NumPy`, podemos filtrar los datos en un `DataFrame`. Por ejemplo, para obtener solo las filas donde la edad es mayor a 30:
+```{python}
+datos[datos['Edad'] > 30]
+```
+
+Inclusive, podemos filtrar los datos y seleccionar las columnas que nos interesan en la misma línea:
+```{python}
+datos[['Nombre', 'Edad']][datos['Edad'] > 30]
+
+# Tambien funciona asi:
+# datos.loc[datos['Edad'] > 30, ['Nombre', 'Edad']]
+```
+
+Si queremos filtar por un valor específico en una columna categórica, podemos hacerlo así:
+```{python}
+datos[datos['Nombre'] == 'Ana']
+``` 
+
+También, si queremos calcular estadísticas de datos agrupados (como lo harías con una tabla dinámica en Excel), podemos usar `groupby()`, por ejemplo:
+```{python}
+datos.groupby('Estudiante')['Edad'].mean()
+```
+
+Podemos agregar columnas facilmente a nuestro `DataFrame` como si creacemos una nueva variables:
+```{python}
+datos['SueldoMensual'] = [500, 700, 600, 800]
+datos
+```
+
+E inclusive crear columnas a partir de operaciones con otras columnas:
+```{python}
+datos['SueldoAnual'] = datos['SueldoMensual'] * 12
+datos
+```
+
+Si nos interesa ordenar los valores de nuestro `DataFrame` por una columna específica, podemos usar `sort_values()`:
+```{python}
+datos.sort_values(by='Edad', ascending=False)
+
+# si queremos que este ordenamiento se guarde entonces:
+datos = datos.sort_values(by='Edad', ascending=False)
+```
+
+Para contar los valores únicos en una columna categórica, podemos usar `value_counts()`:
+```{python}
+datos['Estudiante'].value_counts()
+```
+
+Finalmente, cuándo terminamos nuestro análisis, es común querer guardar los resultados en un archivo CSV para compartir o usar más adelante. Podemos hacerlo con el método `to_csv()`:
+```{python}
+#| eval: false
+datos.to_csv('datos_analizados.csv', index=False)
+```
+
+## Conclusión
+En este post hemos cubierto los conceptos básicos de Python para el análisis de datos, incluyendo la instalación y carga de librerías, creación de variables y tipos de datos, uso de listas, y una introducción a las librerías `NumPy` y `Pandas`. 
+
+Lo más importante es practicar y experimentar con estos conceptos para familiarizarte con el entorno de Python y sus capacidades para el análisis de datos, te recomiendo páginas como [Kaggle](https://www.kaggle.com/) (gratuito) o [DataCamp](https://www.datacamp.com/) (gratuito hasta cierto punto) para seguir aprendiendo y practicando.
+
+¡Gracias por leer y feliz análisis de datos con Python!

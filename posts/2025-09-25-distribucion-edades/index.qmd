@@ -2,7 +2,7 @@
 title: "Gráfico distribución de edades - Pirámide poblacional"
 author: "Herbert Lizama"
 date: "2025-09-25"
-categories: [python]
+categories: [Python]
 ---
 ## Introducción
 En este documento te mostraré como crear el gráfico de distribución poblacional conocido como *pirámide poblacional*. Este tipo de gráfico es útil para visualizar la distribución de edades y sexos en una población determinada. A lo largo del documento, aprenderás:
